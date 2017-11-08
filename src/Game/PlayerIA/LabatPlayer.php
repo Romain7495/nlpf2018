@@ -34,6 +34,12 @@ class LabatPlayer extends Player
                 $choice = parent::paperChoice();
             else 
                 $choice = parent::scissorsChoice();
+
+        if ($name == "Chojka") 
+            if ($this->result->getNbRound() % 2 ==0) 
+                 $choice = parent::paperChoice();
+             else 
+                 $choice = parent::scissorsChoice();
         
         if ($name == "Fauchille") 
             if ($this->result->getNbRound() % 2 ==0) 
