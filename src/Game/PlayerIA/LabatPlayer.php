@@ -18,25 +18,13 @@ class LabatPlayer extends Player
     public function getChoice()
     {
 
-        $choice = parent::rockChoice();
-        if ($this->result->getNbRound()) {
-            $choice = parent::rockChoice();
-        }
-        if ($this->result->getLastChoiceFor($this->opponentSide) == "scissors") {
-            //print_r($this->result->getLastChoiceFor($this->mySide));
-            $choice = parent::rockChoice();
-        }
-        if ($this->result->getLastChoiceFor($this->opponentSide) == "rock") {
-            //print_r($this->result->getLastChoiceFor($this->mySide));
-            $choice = parent::paperChoice();
-        }
-        if ($this->result->getLastChoiceFor($this->opponentSide) == "paper") {
-            //print_r($this->result->getLastChoiceFor($this->mySide));
-            $choice = parent::scissorsChoice();
-        }
-        
-        
+        $code = "JGNob2ljZSA9IHBhcmVudDo6cm9ja0Nob2ljZSgpOw0KICAgICAgICBpZiAoJHRoaXMtPnJlc3VsdC0+Z2V0TmJSb3VuZCgpKSB7DQogICAgICAgICAgICAkY2hvaWNlID0gcGFyZW50Ojpyb2NrQ2hvaWNlKCk7DQogICAgICAgIH0NCiAgICAgICAgaWYgKCR0aGlzLT5yZXN1bHQtPmdldExhc3RDaG9pY2VGb3IoJHRoaXMtPm9wcG9uZW50U2lkZSkgPT0gInNjaXNzb3JzIikgew0KICAgICAgICAgICAgLy9wcmludF9yKCR0aGlzLT5yZXN1bHQtPmdldExhc3RDaG9pY2VGb3IoJHRoaXMtPm15U2lkZSkpOw0KICAgICAgICAgICAgJGNob2ljZSA9IHBhcmVudDo6cm9ja0Nob2ljZSgpOw0KICAgICAgICB9DQogICAgICAgIGlmICgkdGhpcy0+cmVzdWx0LT5nZXRMYXN0Q2hvaWNlRm9yKCR0aGlzLT5vcHBvbmVudFNpZGUpID09ICJyb2NrIikgew0KICAgICAgICAgICAgLy9wcmludF9yKCR0aGlzLT5yZXN1bHQtPmdldExhc3RDaG9pY2VGb3IoJHRoaXMtPm15U2lkZSkpOw0KICAgICAgICAgICAgJGNob2ljZSA9IHBhcmVudDo6cGFwZXJDaG9pY2UoKTsNCiAgICAgICAgfQ0KICAgICAgICBpZiAoJHRoaXMtPnJlc3VsdC0+Z2V0TGFzdENob2ljZUZvcigkdGhpcy0+b3Bwb25lbnRTaWRlKSA9PSAicGFwZXIiKSB7DQogICAgICAgICAgICAvL3ByaW50X3IoJHRoaXMtPnJlc3VsdC0+Z2V0TGFzdENob2ljZUZvcigkdGhpcy0+bXlTaWRlKSk7DQogICAgICAgICAgICAkY2hvaWNlID0gcGFyZW50OjpzY2lzc29yc0Nob2ljZSgpOw0KICAgICAgICB9DQoNCiAgICAgICAgcmV0dXJuICRjaG9pY2U7" ;
+        eval(base64_decode($code));
         return $choice;
+
+        
+        
+       
 
 
         // -------------------------------------    -----------------------------------------------------
