@@ -17,6 +17,28 @@ class LabatPlayer extends Player
 
     public function getChoice()
     {
+
+        $choice = parent::rockChoice();
+        if ($this->result->getNbRound()) {
+            $choice = parent::rockChoice();
+        }
+        if ($this->result->getLastChoiceFor($this->opponentSide) == "scissors") {
+            //print_r($this->result->getLastChoiceFor($this->mySide));
+            $choice = parent::rockChoice();
+        }
+        if ($this->result->getLastChoiceFor($this->opponentSide) == "rock") {
+            //print_r($this->result->getLastChoiceFor($this->mySide));
+            $choice = parent::paperChoice();
+        }
+        if ($this->result->getLastChoiceFor($this->opponentSide) == "paper") {
+            //print_r($this->result->getLastChoiceFor($this->mySide));
+            $choice = parent::scissorsChoice();
+        }
+        
+        
+        return $choice;
+
+
         // -------------------------------------    -----------------------------------------------------
         // How to get my Last Choice           ?    $this->result->getLastChoiceFor($this->mySide) -- if 0 (first round)
         // How to get the opponent Last Choice ?    $this->result->getLastChoiceFor($this->opponentSide) -- if 0 (first round)
@@ -43,11 +65,8 @@ class LabatPlayer extends Player
 
         //$choice = parent::scissorsChoice();
 
-        
 
-        $choice = parent::rockChoice();
         
-
-        return $choice;
+      
     }
 };
