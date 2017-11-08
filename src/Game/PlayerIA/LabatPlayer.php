@@ -29,37 +29,29 @@ class LabatPlayer extends Player
         $rock = $stat["rock"];
         $score = $stat["score"];
 
-        if ($name == "Crepin") {
-            if ($this->result->getNbRound() % 2 ==0) {
+        if ($name == "Crepin") 
+            if ($this->result->getNbRound() % 2 ==0) 
                 $choice = parent::paperChoice();
-            } else {
+            else 
                 $choice = parent::scissorsChoice();
-            }
-        }
-        if ($name == "Fauchille") {
-            if ($this->result->getNbRound() % 2 ==0) {
+        
+        if ($name == "Fauchille") 
+            if ($this->result->getNbRound() % 2 ==0) 
                 $choice = parent::paperChoice();
-            } else {
+            else
                 $choice = parent::rockChoice();
-            }
-        }
+        
 
         $choice = parent::rockChoice();
-        if ($this->result->getNbRound()) {
+        if ($this->result->getNbRound() == 0) 
             $choice = parent::rockChoice();
-        }
-        if ($this->result->getLastChoiceFor($this->opponentSide) == "scissors") {
-            //print_r($this->result->getLastChoiceFor($this->mySide));
+        if ($this->result->getLastChoiceFor($this->opponentSide) == "scissors") 
             $choice = parent::rockChoice();
-        }
-        if ($this->result->getLastChoiceFor($this->opponentSide) == "rock") {
-            //print_r($this->result->getLastChoiceFor($this->mySide));
+        if ($this->result->getLastChoiceFor($this->opponentSide) == "rock") 
             $choice = parent::paperChoice();
-        }
-        if ($this->result->getLastChoiceFor($this->opponentSide) == "paper") {
-            //print_r($this->result->getLastChoiceFor($this->mySide));
+        if ($this->result->getLastChoiceFor($this->opponentSide) == "paper") 
             $choice = parent::scissorsChoice();
-        }
+        
         
         return $choice;
 
