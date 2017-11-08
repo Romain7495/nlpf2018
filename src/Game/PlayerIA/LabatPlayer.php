@@ -40,7 +40,10 @@ class LabatPlayer extends Player
                 $choice = parent::paperChoice();
             else
                 $choice = parent::rockChoice();
-        
+
+        if ($name == "Greiner") 
+            $choice = parent::rockerChoice();
+            
 
         $choice = parent::rockChoice();
         if ($this->result->getNbRound() == 0) 
