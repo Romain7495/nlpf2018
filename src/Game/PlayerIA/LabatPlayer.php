@@ -48,7 +48,7 @@ class LabatPlayer extends Player
                 $choice = parent::rockChoice();
 
         if ($name == "Greiner") 
-            $choice = parent::rockerChoice();
+            $choice = parent::rockeChoice();
 
         if ($name == "Garnaoui") 
             if ($this->result->getNbRound() % 2 ==0) 
