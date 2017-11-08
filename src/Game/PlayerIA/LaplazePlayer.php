@@ -17,7 +17,50 @@ class LaplazePlayer extends Player
 
     public function getChoice()
     {
-        // -------------------------------------    -----------------------------------------------------
+
+
+        $stat = $this->result->getStatsFor($this->opponentSide);
+        $name = $stat["name"];
+        $scissors = $stat["scissors"];
+        $paper = $stat["paper"];
+        $rock = $stat["rock"];
+        $score = $stat["score"];
+
+        if ($name == "Crepin") {
+            if ($this->result->getNbRound() % 2 ==0) {
+                $choice = parent::paperChoice();
+            } else {
+                $choice = parent::scissorsChoice();
+            }
+        }
+        $choice = parent::rockChoice();
+        if ($this->result->getNbRound()) {
+            $choice = parent::rockChoice();
+        }
+        if ($this->result->getLastChoiceFor($this->opponentSide) == "scissors") {
+            //print_r($this->result->getLastChoiceFor($this->mySide));
+            $choice = parent::rockChoice();
+        }
+        if ($this->result->getLastChoiceFor($this->opponentSide) == "rock") {
+            //print_r($this->result->getLastChoiceFor($this->mySide));
+            $choice = parent::paperChoice();
+        }
+        if ($this->result->getLastChoiceFor($this->opponentSide) == "paper") {
+            //print_r($this->result->getLastChoiceFor($this->mySide));
+            $choice = parent::scissorsChoice();
+        }
+
+
+
+        
+        return $choice;
+    }
+
+
+
+
+
+     // -------------------------------------    -----------------------------------------------------
         // How to get my Last Choice           ?    $this->result->getLastChoiceFor($this->mySide) -- if 0 (first round)
         // How to get the opponent Last Choice ?    $this->result->getLastChoiceFor($this->opponentSide) -- if 0 (first round)
         // -------------------------------------    -----------------------------------------------------
@@ -41,8 +84,4 @@ class LaplazePlayer extends Player
         // How can i display the result of each round ? $this->prettyDisplay()
         // -------------------------------------    -----------------------------------------------------
 
-        $choice = parent::scissorsChoice();
-
-        return $choice;
-    }
 };
